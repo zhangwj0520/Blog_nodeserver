@@ -5,24 +5,29 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     userName: {
         type: String,
-        rquired: true
-    },
-    passWord: {
-        type: String,
-        rquired: true
+        rquired: true,
     },
     phoneNumber: {
         type: String,
-        rquired: true
+        rquired: true,
+    },
+    passWord: {
+        type: String,
+        rquired: true,
     },
     identity: {
         type: String,
         rquired: false,
-        default: 'user'
+        default: 'user',
+    },
+    isActive: {
+        type: Boolean,
+        rquired: false,
+        default: false,
     },
     create_at: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
 });
 module.exports = User = mongoose.model('Blog_User', UserSchema);
